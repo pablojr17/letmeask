@@ -39,6 +39,7 @@ export function Room() {
     };
 
     await database.ref(`/rooms/${roomId}/questions`).push(question);
+    setNewQuestion('');
   }
 
     return (
@@ -50,7 +51,7 @@ export function Room() {
           </div>
         </header>
 
-        <main className="content">
+        <main>
           <div className="room-title">
             <h1>Sala React</h1>
             <span>4 perguntas</span>
@@ -64,7 +65,14 @@ export function Room() {
             />
 
             <div className="form-footer">
-              <span>PAra enviar uma pergunta, <button>faça seu login</button>.</span>
+              {user ? (
+                <div className="user-info">
+                  <img src={user.avatar} alt={user.name} />
+                  <span>{user.name}</span>
+                </div>
+              ) : (
+                <span>Para enviar uma pergunta, <button>faça seu login</button>.</span>
+              )}
               <Button disabled={!user} type="submit">Enviar pergunta</Button>
             </div>
 
