@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { Link, useHistory } from 'react-router-dom';
 
-import illustrationImg from '../assets/images/illustration.svg';
+import illustrationImg from '../assets/images/22.svg';
 import logoImg from '../assets/images/logo.svg';
 
 import '../styles/auth.scss';
@@ -39,7 +39,7 @@ export function NewRoom() {
         src={illustrationImg} 
         alt="Ilustração simbolizando perfuntas e respostas" 
       />
-      <strong>Crie suas salas de Q&amp;A ao-vivo</strong>
+      <strong>Crie suas salas ao-vivo</strong>
       <p>Tire as dúvidas da sua audiência em tempo real</p>
       </aside>
 
@@ -47,7 +47,6 @@ export function NewRoom() {
         <div className="main-content">
           <img src={logoImg} alt="Letmeaks" />
            <h2>Criar uma nova sala</h2>
-          {/* <strong>{user?.name}</strong> */}
           <form onSubmit={handleCreateRoom}>
             <input 
               type="text"
